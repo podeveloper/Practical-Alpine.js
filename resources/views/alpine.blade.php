@@ -14,6 +14,7 @@
         inputType: 'password',
         buttonText: 'Show',
         showing: true,
+        password: '',
 
         changeType()
         {
@@ -26,8 +27,11 @@
             <div x-show="showing" class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
                 <div class="px-6 py-4">
                     <div class="font-bold text-xl mb-2">Password Show & Hide</div>
-                    <input x-bind:type="inputType" class="rounded p-2 h-full border-b border-blue-gray-200 bg-gray-100" :placeholder="inputType == 'password' ? '*******************' : 'Type your password here'">
+                    <input x-model="password" x-bind:type="inputType" class="rounded p-2 h-full border-b border-blue-gray-200 bg-gray-100" :placeholder="inputType == 'password' ? '*******************' : 'Type your password here'">
                     <button @click="changeType" :class="inputType == 'password' ? 'bg-blue-500 hover:bg-blue-700' : 'bg-red-500 hover:bg-red-700'" class="my-2 text-white font-bold py-2 px-4 rounded" x-text="buttonText"></button>
+                    <p>
+                        Password: <span x-text="password"></span>
+                    </p>
                 </div>
             </div>
         </div>
