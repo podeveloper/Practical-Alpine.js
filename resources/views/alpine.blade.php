@@ -8,6 +8,9 @@
     <title>Document</title>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        [x-cloak] {display: none !important;}
+    </style>
 </head>
 <body class="bg-gray-600">
 <div x-data="{
@@ -29,7 +32,7 @@
     <div class="flex h-screen">
         <div class="m-auto">
 
-            <button @click="cardToggle" x-show="!showing" class="bg-blue-500 hover:bg-blue-700 my-2 text-white font-bold py-2 px-4 rounded">
+            <button x-cloak @click="cardToggle" x-show="!showing" class="bg-blue-500 hover:bg-blue-700 my-2 text-white font-bold py-2 px-4 rounded">
                 Show The Card
             </button>
 
