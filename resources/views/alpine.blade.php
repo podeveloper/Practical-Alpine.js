@@ -29,11 +29,11 @@
     <div class="flex h-screen">
         <div class="m-auto">
 
-            <button @click="cardToggle" x-show="!showing" class="bg-blue-500 hover:bg-blue-700 my-2 text-white font-bold py-2 px-4 rounded">
-                Show The Card
-            </button>
+            <p x-show="!showing" class="bg-blue-500 hover:bg-blue-700 my-2 text-white font-bold py-2 px-4 rounded">
+                Press "Esc" Key Again to Show the Card!
+            </p>
 
-            <div x-show="showing" class="max-w-sm rounded overflow-hidden shadow-lg bg-white" @click.away="cardToggle">
+            <div x-show="showing" class="max-w-sm rounded overflow-hidden shadow-lg bg-white" @keydown.escape.window="cardToggle">
                 <div class="px-6 py-4">
                     <div class="font-bold text-xl mb-2">Password Show & Hide</div>
                     <input x-bind:type="inputType" class="rounded p-2 h-full border-b border-blue-gray-200 bg-gray-100" :placeholder="inputType == 'password' ? '*******************' : 'Type your password here'">
